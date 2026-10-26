@@ -1,0 +1,364 @@
+{
+  "id": "steam-sterilization-ai-cycle-review",
+  "title": "Steam Sterilization of Instrument Trays with AI-Assisted Cycle Review",
+  "date": "2026-10-25",
+  "status": "DRAFT — illustrative, not validated or approved",
+  "origin": {
+    "generatedBy": "/generate-fmea Claude Code skill (pre-generated; no live AI in the prototype)",
+    "sourceDocument": "fmea/steam-sterilization-ai-cycle-review-fmea.md"
+  },
+  "disclaimer": "DRAFT — for team review. This is an AI-generated starting point, not an approved quality record. All severity, occurrence, and detection scores are illustrative estimates. A cross-functional team must confirm them using site data, deviation history, and its own judgment.",
+  "scopeAndAssumptions": [
+    {
+      "label": "Process",
+      "text": "reusable surgical instrument trays moving from decontamination through steam (moist heat) sterilization to release and sterile storage."
+    },
+    {
+      "label": "AI component",
+      "text": "Sterile Sense AI is assumed to review sterilizer cycle records (parameters and printouts) and suggest a pass or flag to a human reviewer. A human makes the release decision. This describes a hypothetical use for analysis, not a statement of current product capability."
+    },
+    {
+      "label": "Equipment",
+      "text": "pre-vacuum steam sterilizers with routine air-removal and leak testing."
+    },
+    {
+      "label": "Out of scope",
+      "text": "point-of-use handling in the OR, transport between facilities, and low-temperature sterilization methods."
+    },
+    {
+      "label": "Framework",
+      "text": "structure follows the general approach of ICH Q9(R1), Quality Risk Management. Moist heat sterilization practice is covered by standards such as ISO 17665."
+    }
+  ],
+  "processSteps": [
+    {
+      "number": 1,
+      "name": "Clean and decontaminate instruments"
+    },
+    {
+      "number": 2,
+      "name": "Inspect and assemble trays"
+    },
+    {
+      "number": 3,
+      "name": "Package and configure the load"
+    },
+    {
+      "number": 4,
+      "name": "Run the sterilization cycle"
+    },
+    {
+      "number": 5,
+      "name": "Review the cycle record with AI assistance (Sterile Sense AI plus a human reviewer)"
+    },
+    {
+      "number": 6,
+      "name": "Release and store"
+    }
+  ],
+  "failureModes": [
+    {
+      "id": 1,
+      "step": 1,
+      "stepName": "Clean and decontaminate instruments",
+      "failureMode": "Residual soil or bioburden left on instruments",
+      "effect": "Steam can't reach the surface, so the instrument may not be sterile",
+      "cause": "Inadequate manual cleaning; washer-disinfector malfunction",
+      "preventionControls": "Defined cleaning SOPs; washer cycles; staff training",
+      "detectionControls": "Visual inspection; periodic cleaning verification tests",
+      "severity": 10,
+      "occurrence": 4,
+      "detection": 6
+    },
+    {
+      "id": 2,
+      "step": 2,
+      "stepName": "Inspect and assemble trays",
+      "failureMode": "Damaged or missing instrument in tray",
+      "effect": "Surgical delay; possible use of a defective instrument",
+      "cause": "Rushed assembly; count sheet error",
+      "preventionControls": "Standard count sheets; tray lists",
+      "detectionControls": "Second-person check",
+      "severity": 6,
+      "occurrence": 4,
+      "detection": 4
+    },
+    {
+      "id": 3,
+      "step": 3,
+      "stepName": "Package and configure the load",
+      "failureMode": "Torn wrap or failed pouch seal",
+      "effect": "Sterile barrier lost after processing",
+      "cause": "Handling damage; wrong packaging material",
+      "preventionControls": "Approved materials list; handling training",
+      "detectionControls": "Visual check at release and before use",
+      "severity": 9,
+      "occurrence": 3,
+      "detection": 4
+    },
+    {
+      "id": 4,
+      "step": 3,
+      "stepName": "Package and configure the load",
+      "failureMode": "Overloaded chamber or incorrect load placement",
+      "effect": "Poor steam penetration and cold spots, so the load may not be fully sterilized",
+      "cause": "Throughput pressure; unclear load patterns",
+      "preventionControls": "Defined load configurations",
+      "detectionControls": "Internal chemical indicators; biological indicators (BIs)",
+      "severity": 10,
+      "occurrence": 4,
+      "detection": 4
+    },
+    {
+      "id": 5,
+      "step": 4,
+      "stepName": "Run the sterilization cycle",
+      "failureMode": "Air removal failure or chamber air leak",
+      "effect": "Incomplete sterilization",
+      "cause": "Vacuum pump wear; door gasket leak",
+      "preventionControls": "Preventive maintenance",
+      "detectionControls": "Daily air-removal (Bowie-Dick type) test; leak rate test",
+      "severity": 10,
+      "occurrence": 2,
+      "detection": 3
+    },
+    {
+      "id": 6,
+      "step": 4,
+      "stepName": "Run the sterilization cycle",
+      "failureMode": "Wrong cycle selected for the load",
+      "effect": "Load under-processed",
+      "cause": "Operator error; similar cycle names",
+      "preventionControls": "Cycle selection SOP",
+      "detectionControls": "Cycle printout review",
+      "severity": 9,
+      "occurrence": 3,
+      "detection": 5
+    },
+    {
+      "id": 7,
+      "step": 4,
+      "stepName": "Run the sterilization cycle",
+      "failureMode": "Temperature or pressure sensor drift",
+      "effect": "Chamber reads in range while actual conditions are not",
+      "cause": "Calibration overdue or missed",
+      "preventionControls": "Calibration program",
+      "detectionControls": "BIs; periodic independent checks",
+      "severity": 10,
+      "occurrence": 2,
+      "detection": 6
+    },
+    {
+      "id": 8,
+      "step": 5,
+      "stepName": "Review the cycle record with AI assistance (Sterile Sense AI plus a human reviewer)",
+      "failureMode": "AI marks a failed cycle as pass (false negative)",
+      "effect": "Non-sterile load may be released if the human misses it too",
+      "cause": "Training data lacks rare failure patterns; unfamiliar equipment",
+      "preventionControls": "Human sign-off required; defined intended use",
+      "detectionControls": "Periodic human re-review of a sample",
+      "severity": 10,
+      "occurrence": 3,
+      "detection": 5
+    },
+    {
+      "id": 9,
+      "step": 5,
+      "stepName": "Review the cycle record with AI assistance (Sterile Sense AI plus a human reviewer)",
+      "failureMode": "Model drift after an equipment, firmware, or printout format change",
+      "effect": "Accuracy degrades without anyone noticing",
+      "cause": "Input data changes that change control doesn't cover",
+      "preventionControls": "General change control",
+      "detectionControls": "Ad hoc user feedback",
+      "severity": 8,
+      "occurrence": 4,
+      "detection": 6
+    },
+    {
+      "id": 10,
+      "step": 5,
+      "stepName": "Review the cycle record with AI assistance (Sterile Sense AI plus a human reviewer)",
+      "failureMode": "Reviewer over-relies on the AI and rubber-stamps \"pass\"",
+      "effect": "The human check stops working as an independent control",
+      "cause": "Automation bias; workload",
+      "preventionControls": "Reviewer training",
+      "detectionControls": "QA audit of review records",
+      "severity": 9,
+      "occurrence": 5,
+      "detection": 6
+    },
+    {
+      "id": 11,
+      "step": 5,
+      "stepName": "Review the cycle record with AI assistance (Sterile Sense AI plus a human reviewer)",
+      "failureMode": "Too many false flags on good cycles",
+      "effect": "Release delays; alert fatigue",
+      "cause": "Over-sensitive thresholds",
+      "preventionControls": "Initial threshold tuning",
+      "detectionControls": "Flag rate tracking",
+      "severity": 4,
+      "occurrence": 5,
+      "detection": 2
+    },
+    {
+      "id": 12,
+      "step": 5,
+      "stepName": "Review the cycle record with AI assistance (Sterile Sense AI plus a human reviewer)",
+      "failureMode": "Incomplete audit trail (model version, inputs, overrides)",
+      "effect": "Release decision can't be reconstructed; data integrity gap",
+      "cause": "Logging not designed for AI decisions",
+      "preventionControls": "General system logging",
+      "detectionControls": "Periodic audit trail review",
+      "severity": 7,
+      "occurrence": 3,
+      "detection": 7
+    },
+    {
+      "id": 13,
+      "step": 6,
+      "stepName": "Release and store",
+      "failureMode": "Load released before all release criteria are met",
+      "effect": "Possibly non-sterile items reach use",
+      "cause": "Urgent demand; manual hold tracking",
+      "preventionControls": "Release SOP",
+      "detectionControls": "Release record review",
+      "severity": 10,
+      "occurrence": 2,
+      "detection": 5
+    },
+    {
+      "id": 14,
+      "step": 6,
+      "stepName": "Release and store",
+      "failureMode": "Wet packs or poor storage conditions",
+      "effect": "Moisture can wick contamination through the barrier",
+      "cause": "Insufficient dry time; high humidity",
+      "preventionControls": "Dry phase in cycle; storage environment controls",
+      "detectionControls": "Visual check for moisture",
+      "severity": 8,
+      "occurrence": 3,
+      "detection": 4
+    }
+  ],
+  "recommendedActions": [
+    {
+      "failureModeId": 1,
+      "action": "Add routine cleaning verification at a defined frequency, plus magnified inspection for complex or lumened instruments",
+      "owner": "SPD Lead / QA",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 3,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 3,
+      "action": "Standardize packaging materials; add a barrier integrity check to the point-of-use checklist",
+      "owner": "SPD Lead",
+      "proposedSeverity": 9,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 4,
+      "action": "Post visual load pattern guides at each sterilizer; require supervisor sign-off for non-standard loads",
+      "owner": "Engineering / SPD",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 2,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 5,
+      "action": "Trend air removal and leak test results; set PM intervals from the trends",
+      "owner": "Engineering",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 1,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 6,
+      "action": "Restrict cycle menus by load type; use barcode mapping from load to cycle",
+      "owner": "Engineering",
+      "proposedSeverity": 9,
+      "proposedOccurrence": 1,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 7,
+      "action": "Lock out sterilizers with overdue calibration; compare against independent reference monitoring",
+      "owner": "Engineering / Metrology",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 1,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 8,
+      "action": "Evaluate the model on a test set enriched with known failed cycles against predefined acceptance criteria; keep mandatory human review of every release",
+      "owner": "Data Science / QA",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 9,
+      "action": "Bring equipment, firmware, and printout format changes under change control so they trigger model re-evaluation; monitor AI–human agreement rates",
+      "owner": "Data Science / QA",
+      "proposedSeverity": 8,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 10,
+      "action": "Have reviewers check key parameters before the AI verdict is shown (\"blind-first\" review); audit a sample of reviews",
+      "owner": "QA / Product",
+      "proposedSeverity": 9,
+      "proposedOccurrence": 3,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 12,
+      "action": "Log model version, inputs, outputs, reviewer ID, timestamps, and overrides in a tamper-evident audit trail",
+      "owner": "Engineering",
+      "proposedSeverity": 7,
+      "proposedOccurrence": 1,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 13,
+      "action": "Have the system enforce hold status until all release criteria are met; require a QA second signature for any override",
+      "owner": "SPD / QA",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 1,
+      "proposedDetection": 3
+    }
+  ],
+  "notes": [
+    "row 10 is still high after the action (RPN 108, S 9). Automation bias is hard to remove fully. The team should consider further controls and re-assess."
+  ],
+  "topRisksSummary": [
+    {
+      "label": "Reviewers trusting the AI too much (RPN 270)",
+      "text": "If people stop checking because the AI said \"pass,\" the human safety net is gone. This is the biggest risk because it undermines every other AI-related control."
+    },
+    {
+      "label": "Dirty instruments going into the sterilizer (RPN 240)",
+      "text": "Sterilization can't make up for poor cleaning, and residual soil is hard to see."
+    },
+    {
+      "label": "Model drift after equipment or format changes (RPN 192)",
+      "text": "The AI can quietly get worse when its inputs change, unless changes trigger re-evaluation."
+    },
+    {
+      "label": "Bad load configuration (RPN 160)",
+      "text": "Overloaded or badly arranged loads can block steam, even when the cycle itself runs correctly."
+    },
+    {
+      "label": "AI passing a failed cycle (RPN 150)",
+      "text": "This is rare but severe. Testing on known failure cases and mandatory human review are the main defenses."
+    }
+  ],
+  "limitations": [
+    "Scores are illustrative estimates, not based on actual site data or deviation history.",
+    "This draft doesn't establish that any process, system, or Sterile Sense AI is validated, compliant, or fit for its intended use.",
+    "The described AI use is hypothetical. The team should rescope this FMEA to the product's actual intended use and workflow.",
+    "A real assessment needs input from SPD, QA, Engineering, Infection Prevention, and Data Science."
+  ]
+}

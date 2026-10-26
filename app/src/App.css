@@ -1,0 +1,36 @@
+.draft-banner {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  padding: 10px 16px;
+  background: #fff4ce;
+  border-bottom: 2px solid #c79a00;
+  color: #4a3b00;
+  text-align: center;
+}
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+h1 {
+  margin: 8px 0 0;
+}
+
+.subtitle {
+  margin: 4px 0 24px;
+  color: #555;
+}
+
+.data-check {
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.rule-note {
+  font-size: 0.9em;
+  color: #555;
+}

@@ -1,0 +1,406 @@
+{
+  "id": "aseptic-filling-ai-em-review",
+  "title": "Aseptic Filling Line with AI-Assisted Environmental Monitoring Review",
+  "date": "2026-10-26",
+  "status": "DRAFT — illustrative, not validated or approved",
+  "origin": {
+    "generatedBy": "/generate-fmea Claude Code skill (pre-generated; no live AI in the prototype)",
+    "sourceDocument": "fmea/aseptic-filling-ai-em-review-fmea.md"
+  },
+  "disclaimer": "DRAFT — for team review. This is an AI-generated starting point, not an approved quality record. All severity, occurrence, and detection scores are illustrative estimates. A cross-functional team must confirm them using site data, deviation history, and its own judgment.",
+  "scopeAndAssumptions": [
+    {
+      "label": "Process",
+      "text": "aseptic filling of a sterile, small-volume injectable into glass vials on a RABS (restricted access barrier system) line, with Grade A filling inside a Grade B background. The scope runs from component preparation through batch disposition."
+    },
+    {
+      "label": "Environmental monitoring (EM) program",
+      "text": "viable air sampling (active and settle plates), surface contact plates, personnel monitoring (gloves and gowns), and continuous non-viable particle counting."
+    },
+    {
+      "label": "AI component",
+      "text": "Sterile Sense AI is assumed to review EM results from the lab system, flag results above alert and action limits, spot adverse trends, and suggest what QA should look at. QA microbiology makes every decision. This describes a hypothetical use for analysis, not a statement of current product capability."
+    },
+    {
+      "label": "Out of scope",
+      "text": "drug substance manufacturing, sterile filtration of bulk product, terminal inspection beyond closure checks, and lab methods for identifying organisms."
+    },
+    {
+      "label": "Framework",
+      "text": "structure follows the general approach of ICH Q9(R1), Quality Risk Management. Relevant guidance for aseptic processing includes EU GMP Annex 1 and FDA's guidance on sterile drug products produced by aseptic processing."
+    }
+  ],
+  "processSteps": [
+    {
+      "number": 1,
+      "name": "Prepare and sterilize components and equipment (vials, stoppers, product-contact parts)"
+    },
+    {
+      "number": 2,
+      "name": "Gown up and enter the cleanroom"
+    },
+    {
+      "number": 3,
+      "name": "Set up the line and perform aseptic interventions"
+    },
+    {
+      "number": 4,
+      "name": "Fill and stopper"
+    },
+    {
+      "number": 5,
+      "name": "Collect and process EM samples"
+    },
+    {
+      "number": 6,
+      "name": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)"
+    },
+    {
+      "number": 7,
+      "name": "Disposition the batch"
+    }
+  ],
+  "failureModes": [
+    {
+      "id": 1,
+      "step": 1,
+      "stepName": "Prepare and sterilize components and equipment (vials, stoppers, product-contact parts)",
+      "failureMode": "Components or parts not fully sterilized or depyrogenated",
+      "effect": "Non-sterile or pyrogenic surfaces touch the product",
+      "cause": "Wrong load pattern; cycle or depyrogenation tunnel fault",
+      "preventionControls": "Qualified cycles; defined load patterns",
+      "detectionControls": "Cycle record review; biological and endotoxin indicators",
+      "severity": 10,
+      "occurrence": 2,
+      "detection": 4
+    },
+    {
+      "id": 2,
+      "step": 2,
+      "stepName": "Gown up and enter the cleanroom",
+      "failureMode": "Gowning breach (exposed skin, torn glove, poor donning)",
+      "effect": "Operator sheds particles and microbes into the critical zone",
+      "cause": "Training gaps; glove damage; rushing",
+      "preventionControls": "Gowning qualification; glove inspection",
+      "detectionControls": "Glove and gown sampling at exit",
+      "severity": 9,
+      "occurrence": 4,
+      "detection": 5
+    },
+    {
+      "id": 3,
+      "step": 3,
+      "stepName": "Set up the line and perform aseptic interventions",
+      "failureMode": "Poor aseptic technique during an intervention (e.g., blocking airflow over open vials)",
+      "effect": "Direct contamination risk to open product",
+      "cause": "Unplanned interventions; poor technique",
+      "preventionControls": "Defined intervention list; interventions included in media fills",
+      "detectionControls": "Supervisor observation",
+      "severity": 10,
+      "occurrence": 4,
+      "detection": 6
+    },
+    {
+      "id": 4,
+      "step": 3,
+      "stepName": "Set up the line and perform aseptic interventions",
+      "failureMode": "RABS glove port breach (pinhole or tear)",
+      "effect": "Barrier between operator and Grade A zone is compromised",
+      "cause": "Glove wear; sharp edges",
+      "preventionControls": "Scheduled glove changes",
+      "detectionControls": "Visual glove checks",
+      "severity": 10,
+      "occurrence": 3,
+      "detection": 5
+    },
+    {
+      "id": 5,
+      "step": 4,
+      "stepName": "Fill and stopper",
+      "failureMode": "Loss of unidirectional airflow or room pressure",
+      "effect": "Grade A conditions are lost during filling",
+      "cause": "HEPA filter damage; HVAC fault",
+      "preventionControls": "HEPA integrity testing; HVAC maintenance",
+      "detectionControls": "Continuous pressure and particle monitoring with alarms",
+      "severity": 10,
+      "occurrence": 2,
+      "detection": 3
+    },
+    {
+      "id": 6,
+      "step": 4,
+      "stepName": "Fill and stopper",
+      "failureMode": "Stopper missing or misplaced",
+      "effect": "Container closure integrity lost, so the vial may not stay sterile",
+      "cause": "Feed bowl jams; machine setup",
+      "preventionControls": "Setup verification",
+      "detectionControls": "In-line stopper checks; 100% visual inspection",
+      "severity": 9,
+      "occurrence": 3,
+      "detection": 3
+    },
+    {
+      "id": 7,
+      "step": 5,
+      "stepName": "Collect and process EM samples",
+      "failureMode": "EM sample missed, or taken at the wrong location or time",
+      "effect": "Contamination happens but no evidence is captured",
+      "cause": "Missed schedule; unclear location map",
+      "preventionControls": "EM plan with location map",
+      "detectionControls": "Manual sample reconciliation",
+      "severity": 8,
+      "occurrence": 4,
+      "detection": 5
+    },
+    {
+      "id": 8,
+      "step": 5,
+      "stepName": "Collect and process EM samples",
+      "failureMode": "Plate handling error (mislabeled, damaged, wrong incubation)",
+      "effect": "Invalid or misattributed result",
+      "cause": "Handwritten labels; manual incubation tracking",
+      "preventionControls": "Labeling and incubation SOPs",
+      "detectionControls": "Lab review of plates and records",
+      "severity": 7,
+      "occurrence": 4,
+      "detection": 5
+    },
+    {
+      "id": 9,
+      "step": 6,
+      "stepName": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)",
+      "failureMode": "AI misses an excursion or adverse trend (false negative)",
+      "effect": "Contamination signal isn't investigated and the batch may be released",
+      "cause": "Training data lacks rare patterns; new organisms or locations",
+      "preventionControls": "Mandatory QA review; defined intended use",
+      "detectionControls": "Periodic human re-review of a sample",
+      "severity": 10,
+      "occurrence": 3,
+      "detection": 5
+    },
+    {
+      "id": 10,
+      "step": 6,
+      "stepName": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)",
+      "failureMode": "Wrong counts fed to the AI (transcription errors)",
+      "effect": "AI flags or trends are based on wrong data",
+      "cause": "Manual data entry from plate reads",
+      "preventionControls": "Data entry SOP",
+      "detectionControls": "Second-person verification (inconsistent)",
+      "severity": 8,
+      "occurrence": 4,
+      "detection": 6
+    },
+    {
+      "id": 11,
+      "step": 6,
+      "stepName": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)",
+      "failureMode": "Reviewer over-relies on the AI and accepts \"no issues\" without checking",
+      "effect": "QA review stops working as an independent control",
+      "cause": "Automation bias; high data volume",
+      "preventionControls": "Reviewer training",
+      "detectionControls": "QA audit of review records",
+      "severity": 9,
+      "occurrence": 5,
+      "detection": 6
+    },
+    {
+      "id": 12,
+      "step": 6,
+      "stepName": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)",
+      "failureMode": "Model drift after facility changes (new sample locations, limits, or equipment)",
+      "effect": "AI accuracy degrades without anyone noticing",
+      "cause": "Changes not routed to model re-evaluation",
+      "preventionControls": "General change control",
+      "detectionControls": "Ad hoc user feedback",
+      "severity": 8,
+      "occurrence": 3,
+      "detection": 6
+    },
+    {
+      "id": 13,
+      "step": 6,
+      "stepName": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)",
+      "failureMode": "Incomplete audit trail (model version, inputs, overrides)",
+      "effect": "EM review and disposition can't be reconstructed; data integrity gap",
+      "cause": "Logging not designed for AI decisions",
+      "preventionControls": "General system logging",
+      "detectionControls": "Periodic audit trail review",
+      "severity": 7,
+      "occurrence": 3,
+      "detection": 7
+    },
+    {
+      "id": 14,
+      "step": 6,
+      "stepName": "Review EM data with AI assistance (Sterile Sense AI plus QA microbiology)",
+      "failureMode": "Too many false trend flags",
+      "effect": "Review delays; alert fatigue",
+      "cause": "Over-sensitive trend rules",
+      "preventionControls": "Initial rule tuning",
+      "detectionControls": "Flag rate tracking",
+      "severity": 4,
+      "occurrence": 5,
+      "detection": 2
+    },
+    {
+      "id": 15,
+      "step": 7,
+      "stepName": "Disposition the batch",
+      "failureMode": "Batch dispositioned before EM results are complete and reviewed",
+      "effect": "Release without complete sterility assurance evidence",
+      "cause": "Schedule pressure; plates still incubating",
+      "preventionControls": "Disposition checklist",
+      "detectionControls": "QA disposition review",
+      "severity": 10,
+      "occurrence": 2,
+      "detection": 4
+    }
+  ],
+  "recommendedActions": [
+    {
+      "failureModeId": 1,
+      "action": "Trend sterilization and depyrogenation cycle data; verify load patterns at each run",
+      "owner": "Engineering / Validation",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 1,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 2,
+      "action": "Requalify gowning on a regular schedule; sample gloves and gowns at every exit from the critical area",
+      "owner": "QA Micro / Manufacturing",
+      "proposedSeverity": 9,
+      "proposedOccurrence": 3,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 3,
+      "action": "Reduce interventions through equipment design; record and review interventions on video; cover every intervention type in media fills",
+      "owner": "Manufacturing / Engineering",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 2,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 4,
+      "action": "Test glove integrity before each batch; set glove change frequency from failure history",
+      "owner": "Manufacturing",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 5,
+      "action": "Interlock filling with airflow and pressure alarms so filling stops when conditions are lost",
+      "owner": "Engineering",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 1,
+      "proposedDetection": 2
+    },
+    {
+      "failureModeId": 6,
+      "action": "Add automatic reject for vials with missing or misplaced stoppers",
+      "owner": "Engineering",
+      "proposedSeverity": 9,
+      "proposedOccurrence": 2,
+      "proposedDetection": 2
+    },
+    {
+      "failureModeId": 7,
+      "action": "Use an electronic EM schedule with barcode-scanned sample locations and missed-sample alerts",
+      "owner": "QA Micro",
+      "proposedSeverity": 8,
+      "proposedOccurrence": 2,
+      "proposedDetection": 2
+    },
+    {
+      "failureModeId": 8,
+      "action": "Barcode-label plates; track incubation in the lab system",
+      "owner": "QA Micro",
+      "proposedSeverity": 7,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 9,
+      "action": "Evaluate the model on historical EM data enriched with known excursions and trends against predefined acceptance criteria; keep mandatory QA review of all EM data",
+      "owner": "Data Science / QA",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 10,
+      "action": "Feed counts to the AI directly from the lab system; require second-person verification for any manual edit",
+      "owner": "Engineering / QA Micro",
+      "proposedSeverity": 8,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 11,
+      "action": "Have reviewers assess the raw EM data before the AI's summary is shown (\"blind-first\" review); audit a sample of reviews",
+      "owner": "QA / Product",
+      "proposedSeverity": 9,
+      "proposedOccurrence": 3,
+      "proposedDetection": 4
+    },
+    {
+      "failureModeId": 12,
+      "action": "Bring EM location, limit, and equipment changes under change control so they trigger model re-evaluation; monitor AI–human agreement rates",
+      "owner": "Data Science / QA",
+      "proposedSeverity": 8,
+      "proposedOccurrence": 2,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 13,
+      "action": "Log model version, inputs, outputs, reviewer ID, timestamps, and overrides in a tamper-evident audit trail",
+      "owner": "Engineering",
+      "proposedSeverity": 7,
+      "proposedOccurrence": 1,
+      "proposedDetection": 3
+    },
+    {
+      "failureModeId": 15,
+      "action": "Have the system block disposition until all EM results are final and reviewed; require a QA second signature for any override",
+      "owner": "QA",
+      "proposedSeverity": 10,
+      "proposedOccurrence": 1,
+      "proposedDetection": 3
+    }
+  ],
+  "notes": [
+    "row 11 is still high after the action (RPN 108, S 9). Automation bias is hard to remove fully. The team should consider further controls and re-assess."
+  ],
+  "topRisksSummary": [
+    {
+      "label": "QA trusting the AI's \"no issues\" too much (RPN 270)",
+      "text": "EM data is high-volume and mostly clean, which is exactly when people stop looking. If reviewers rely on the AI, the main human control over contamination signals is gone."
+    },
+    {
+      "label": "Poor technique during aseptic interventions (RPN 240)",
+      "text": "Every time an operator reaches into the critical zone, open product is at risk. The best fix is fewer interventions, not just more watching."
+    },
+    {
+      "label": "Wrong counts going into the AI (RPN 192)",
+      "text": "The AI can only be as good as its data. Manual transcription of plate counts quietly corrupts every trend downstream."
+    },
+    {
+      "label": "Gowning breaches (RPN 180)",
+      "text": "People are the largest contamination source in aseptic areas, and a small gown or glove failure can go unnoticed during a shift."
+    },
+    {
+      "label": "Missed or misplaced EM samples (RPN 160)",
+      "text": "If a sample isn't taken where and when it should be, contamination can happen without leaving any evidence for the AI or QA to review."
+    }
+  ],
+  "limitations": [
+    "Scores are illustrative estimates, not based on actual site data, EM history, or deviation records.",
+    "14 of 15 rows are high priority, mostly because of the S ≥ 9 rule. That's expected for sterile injectables, where most failures could reach patients. The team should still rank actions by RPN and feasibility.",
+    "This draft doesn't establish that any process, system, or Sterile Sense AI is validated, compliant, or fit for its intended use.",
+    "The described AI use is hypothetical. The team should rescope this FMEA to the product's actual intended use and workflow.",
+    "A real assessment needs input from Manufacturing, QA Microbiology, Validation, Engineering, and Data Science."
+  ]
+}

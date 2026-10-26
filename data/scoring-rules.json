@@ -1,0 +1,31 @@
+{
+  "description": "Demonstration scoring rules for the Sterile Sense AI prototype. RPN = Severity x Occurrence x Detection, each scored 1-10.",
+  "disclaimer": "These thresholds are configurable examples chosen for this demonstration. They are not a universal regulatory requirement. Each organization defines its own risk acceptance criteria within its quality risk management process.",
+  "criticalSeverityThreshold": 9,
+  "criticalSeverityRule": "Any failure mode with Severity >= criticalSeverityThreshold is flagged high priority regardless of RPN, so high-severity risks are never hidden by a low RPN.",
+  "highRpnThreshold": 100,
+  "mediumRpnThreshold": 50,
+  "scales": {
+    "severity": {
+      "9-10": "Possible patient harm or regulatory action",
+      "7-8": "Batch or lot rejected, major deviation",
+      "4-6": "Rework or minor deviation, partial loss",
+      "2-3": "Minor inconvenience, no quality impact",
+      "1": "No effect"
+    },
+    "occurrence": {
+      "9-10": "Very likely or recurring",
+      "7-8": "Frequent",
+      "4-6": "Occasional",
+      "2-3": "Rare",
+      "1": "Remote"
+    },
+    "detection": {
+      "9-10": "Almost certainly not detected before release or use",
+      "7-8": "Low chance of detection",
+      "4-6": "Moderate chance of detection",
+      "2-3": "High chance of detection",
+      "1": "Almost certainly detected"
+    }
+  }
+}
