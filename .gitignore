@@ -1,0 +1,21 @@
+# Environment files: may hold API keys or other secrets.
+# Commit a .env.example with placeholder values instead.
+.env
+.env.*
+!.env.example
+
+# Personal Claude Code settings (shared project settings stay committed)
+.claude/settings.local.json
+
+# OS files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
